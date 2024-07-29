@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Information Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .form-container {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            width: 100%;
+            max-width: 800px;
+        }
+        h1 {
+            margin-bottom: 20px;
+            font-size: 24px;
+            color: #333;
+            text-align: center;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: #555;
+        }
+        .form-group input, 
+        .form-group select, 
+        .form-group textarea {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        .form-group textarea {
+            resize: vertical;
+        }
+        .form-group button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            display: block;
+            margin: 0 auto;
+        }
+        .form-group button:hover {
+            background-color: #45a049;
+        }
+        .form-group .checkbox-group {
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .form-group .checkbox-group label {
+            margin-right: 15px;
+            font-weight: normal;
+        }
+        .form-group .checkbox-group input {
+            margin-right: 5px;
+        }
+        .form-group .file-upload {
+            padding: 0;
+        }
+        .form-group .file-upload input {
+            border: 1px solid #ddd;
+            padding: 6px;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <h1>Student Information</h1>
+        <form action="YOUR_SERVER_ENDPOINT" method="post" enctype="multipart/form-data">
+            <div class="form-group">
+                <label for="first-name">First Name:</label>
+                <input type="text" id="first-name" name="first_name" required>
+            </div>
+            <div class="form-group">
+                <label for="last-name">Last Name:</label>
+                <input type="text" id="last-name" name="last_name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email Address:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="phone">Phone Number:</label>
+                <input type="tel" id="phone" name="phone">
+            </div>
+            <div class="form-group">
+                <label for="date-of-birth">Date of Birth:</label>
+                <input type="date" id="date-of-birth" name="dob" required>
+            </div>
+            <div class="form-group">
+                <label for="gender">Gender:</label>
+                <select id="gender" name="gender" required>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                    <option value="other">Other</option>
+                    <option value="prefer-not-to-say">Prefer not to say</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="address">Address:</label>
+                <textarea id="address" name="address" rows="4" required></textarea>
+            </div>
+            <div class="form-group">
+                <label for="education">Education Details:</label>
+                <textarea id="education" name="education" rows="4" placeholder="e.g., Bachelor of Science in Computer Science, XYZ University" required></textarea>
+            </div>
+            <div class="form-group">
+                <label for="experience">Work Experience:</label>
+                <textarea id="experience" name="experience" rows="4" placeholder="e.g., Intern at ABC Corp, Software Developer at DEF Ltd." required></textarea>
+            </div>
+            <div class="form-group">
+                <label for="state">State:</label>
+                <select id="state" name="state" required>
+                    <option value="" disabled selected>Select your state</option>
+                    <option value="state1">AP</option>
+                    <option value="state2">TN</option>
+                    <option value="state3">KA</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label>Coding/Programming Languages:</label>
+                <div class="checkbox-group">
+                    <label><input type="checkbox" name="languages" value="python"> Python</label>
+                    <label><input type="checkbox" name="languages" value="java"> Java</label>
+                    <label><input type="checkbox" name="languages" value="javascript"> JavaScript</label>
+                    <label><input type="checkbox" name="languages" value="c++"> C++</label>
+                    <label><input type="checkbox" name="languages" value="ruby"> Ruby</label>
+                    <label><input type="checkbox" name="languages" value="php"> PHP</label>
+                </div>
+            </div>
+            <div class="form-group">
+                <label>Domain Interests:</label>
+                <div class="checkbox-group">
+                    <label><input type="checkbox" name="domain_interests" value="web-development"> Web Development</label>
+                    <label><input type="checkbox" name="domain_interests" value="data-science"> Data Science</label>
+                    <label><input type="checkbox" name="domain_interests" value="machine-learning"> Machine Learning</label>
+                    <label><input type="checkbox" name="domain_interests" value="cybersecurity"> Cybersecurity</label>
+                    <label><input type="checkbox" name="domain_interests" value="software-engineering"> Software Engineering</label>
+                </div>
+            </div>
+            <div class="form-group file-upload">
+                <label for="resume">Upload Resume:</label>
+                <input type="file" id="resume" name="resume" accept=".pdf,.doc,.docx" required>
+            </div>
+
+            <div class="form-group">
+                <button type="submit">Submit</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
